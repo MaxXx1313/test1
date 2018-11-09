@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html >
+<head >
+	<meta charset="utf-8">
+	<title>Grid</title>
+
+	<style>
+
+
+		
+		html,body{
+			height: 100%;
+			width: 100%;
+		}
+		
+		
+		.mainconteiner{
+			height: 137%;
+			width: 100%;
+			display: grid;
+			background: #a89;
+  			grid-template:
+    			[row1-start] "header header header " 22% [row1-end]
+    			[row2-start] "left-div center-div right-div" 78% [row2-end]
+   				 /25% 50% 25%;
+   			justify-items: center;
+		}
+
+		.maincontent__item{
+			background: #c745;
+			border-style: solid; 
+			border-width: 1px 1px 1px 1px;
+			box-sizing: border-box;
+
+			}
+
+		.maincontent__item__table{
+			border-style: solid; 
+			border-width: 1px 1px 1px 1px;
+			width: 80%;
+
+		}
+
+		.maincontent__item__table__cell{
+			background: #c749;
+			border-style: solid; 
+			border-width: 1px 1px 1px 1px;
+			height: 90%;
+			width: 90%;
+		
+		}
+		.maincontent__item__table__cell--longcell{
+			background: #c246;
+			border-style: solid; 
+			border-width: 1px 1px 1px 1px;	
+			height: 90%;
+			width: 70%;
+		}
+
+		.maincontent__item__table__cell--fullwidth{
+			background: #c758;
+			border-style: solid; 
+			border-width: 1px 1px 1px 1px;
+			height: 80%;
+			width: 100%;
+
+		}
+
+
+		.fixed{
+			background: yellow;
+			z-index: 1;
+			position: fixed;
+			border-style: solid; 
+    		border-width: 1px 1px 1px 1px;
+
+		}
+		.fixed_top{
+			right: 0%; 
+    		top: 0%;
+            width:60%;
+            height: 5%;
+
+		}
+
+		.fixed_bottom{
+			left:  0%; 
+    		top: 86%;
+            width:100%;
+            height: 13%;
+		}
+
+		.topitem{
+			grid-area: header;
+			background: #c743;
+			height: 80%;
+			width: 100%;
+		}
+
+		.d1{
+			grid-area: left-div;
+			background: #f983;
+			height: 78%;
+			width:80%; 
+				}
+
+		.d2{
+			grid-area: center-div;
+			background: #f212;	
+			display: grid;
+			grid-template:
+    			[row1-start] "top-table-div " 45% [row1-end]
+    			[row2-start] "bottom-table-div" 55% [row2-end]
+   				 /100% ;	
+   			height: 65%;
+   			width:80%; 
+   			align-items: center;
+   			justify-items: center;
+   		}
+
+		.d3{
+			grid-area: right-div;
+			background: #c713;
+			height: 70%;
+			width:80%; 
+		}
+
+		.d21{
+			grid-area: top-table-div;
+			background: #a729;
+			display: grid;
+			grid-template:
+    			[row1-start] "small-cell-1 small-cell-2 small-cell-3" 60% [row1-end]
+    			[row2-start] "long-cell long-cell long-cell" 40% [row2-end]
+   				 /33% 34% 33% ;
+   			height: 95%;
+   			align-items: center;
+   			justify-items: center;
+
+		}
+
+		.d22{
+			grid-area: bottom-table-div;
+			background: #b123;
+			display: grid;
+			grid-template:
+    			[row1-start] "small-cell-1 small-cell-2 small-cell-3" 45% [row1-end]
+    			[row2-start] "long-cell long-cell long-cell" 30% [row2-end]
+    			[row3-start] "fullwidth-cell fullwidth-cell fullwidth-cell" 25% [row3-end]
+   				 /33% 34% 33% ;
+   			 height: 95%;
+   			 align-items: center;
+   			justify-items: center;
+		}
+
+		.d211{			
+			grid-area: small-cell-1;
+			background: #d723;
+		}
+		.d212{
+			grid-area: small-cell-2;
+			background: #d723;
+		}
+		.d213{
+			grid-area: small-cell-3;
+			background: #d523;
+		}
+
+		.d214{
+			grid-area: long-cell;
+			background: #d923;
+		
+		}
+
+		.d221{
+			grid-area: small-cell-1;
+			background: #g723;
+		}
+
+		.d222{
+			grid-area: small-cell-2;
+			background: #g723;
+		}
+
+		.d223{
+			grid-area: small-cell-3;
+			background: #g723;
+		}
+
+		.d224{
+			grid-area: long-cell;
+			background: #e723;
+		}
+
+		.d225{
+			grid-area: fullwidth-cell;
+			background: #g723;
+			align-self: end;
+			
+		}
+
+
+
+        </style>
+    </head>
+    <body >
+    	<div class="fixed fixed_top"></div>
+        <div class="fixed fixed_bottom"></div>
+        <div class="mainconteiner">
+        	<div class="maincontent__item topitem"></div>
+        	<div class="maincontent__item d1"></div>
+       		<div class="maincontent__item d2">
+        		<div class="maincontent__item__table d21">
+        			<div class="maincontent__item__table__cell d211"></div>
+	        		<div class="maincontent__item__table__cell d212"></div>
+	        		<div class="maincontent__item__table__cell d213"></div>
+	        		<div class="maincontent__item__table__cell--longcell d214"></div>
+	        	</div>
+	        	<div class="maincontent__item__table d22">
+	        		<div class="maincontent__item__table__cell d221"></div>
+	        		<div class="maincontent__item__table__cell d222"></div>
+	        		<div class="maincontent__item__table__cell d223"></div>
+	        		<div class="maincontent__item__table__cell--longcell d224"></div>
+	        		<div class="maincontent__item__table__cell--fullwidth d225"></div>
+	        	</div>
+	        </div>
+	        	<div class="maincontent__item d3"></div>
+        </div>	
+</body>
+</html>

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html >
+<head >
+	<meta charset="utf-8">
+	<title>Blocks</title>
+
+	<style>
+
+
+
+
+
+		#d32{
+			/*height: 100px !important;*/
+		}
+
+
+		html,body{
+			height: 90%;
+			width: 100%;
+		}
+		.cell{
+			float: left;
+			width: 28%;
+			height: 40%;
+			background: #c741;
+			border-style: solid; 
+			border-width: 1px 1px 1px 1px;
+			margin:2% 2% 2% 3%;
+
+		}
+       .fixedcells{
+       		z-index: 1;
+			position: fixed;
+			border-style: solid; 
+    		border-width: 1px 1px 1px 1px
+
+       }
+       .header {
+			right: 0%; 
+    		top: 0%;
+    		background: #ff7; 
+            width:60%;
+            height: 5%;
+		}
+		.footer{
+       		left:  0%; 
+    		top: 86%;
+    		background: #f67; 
+            width:100%;
+            height: 14%
+		}
+		.background{
+			z-index: -2;
+			top: 0%;
+			left: 0%;
+			width: 100%;
+			height: 210%;
+			background: #a89;
+			position: absolute;
+		}
+		.d1{
+			z-index: -1;
+			height: 28%;
+			width: 100%;
+    		border-width: 1px 0px 1px 0px; 
+			background: #e897;
+			float: none;
+		}
+		.d2{
+			height: 150%;
+			width: 23%;
+			background: #d135;
+			margin:  4% 1% 2% 3%;
+		} 
+		/*-----------------------------------------------------------*/  
+		.d3{
+			float: left;
+			background: #c741;
+			height: 140%;
+			width: 35%;
+			margin:  4% 0% 25% 7%;
+			border-style: solid; 
+			border-width: 1px 1px 1px 1px;
+		}
+		.d3__table{
+			width: 88%;
+			background: #c741;
+			border-style: solid; 
+			border-width: 1px 1px 1px 1px;
+			margin:2% 6% 2% 6%;
+		}
+
+		.d3__table__cell{
+			float: left;
+			width: 28%;
+			height: 40%;
+			background: #c741;
+			border-style: solid; 
+			border-width: 1px 1px 1px 1px;
+			margin:2% 2% 2% 2%;
+		}
+
+		.d3__table__cell--longcell{
+			float: right;
+			width: 86%;
+			margin:2% 8% 4% 10%;
+			background: #c741;
+			border-style: solid; 
+			border-width: 1px 1px 1px 1px;
+		}
+
+		.d3__table__cell--fullwidth{
+			float: right;
+			width: 100%;
+			margin:0% 0% 0% 0%;
+			background: #e897;
+			border-style: solid; 
+			border-width: 1px 1px 1px 1px;
+		}
+		.d31{
+			height: 36%;
+		}
+		.d32{
+			height: 56%;
+			margin-top: 4%;
+		}
+
+		.d311{
+			height: 48%;
+			margin-top:4% ;
+
+		}
+		.d312{
+			height: 48%;
+			margin-top:4%;
+		}
+
+		.d313{
+			float: right;
+			height: 48%;
+			margin-top:4%;
+		}
+		
+		.d321{
+			margin-left: 3%;
+
+		}
+		.d322{
+			
+		}
+		
+		.d323{
+			margin-right: 3%;
+		}
+
+		.d314{
+			height: 33%;
+		}
+		
+		.d324{
+			height: 25%;
+			width: 86%;
+		}
+
+		.d325{
+			height: 25%;
+		}
+
+		/*-----------------------------------------------------------*/  
+		.d4{
+
+			height: 145%;
+			width: 18.6%;
+			background: #e481;
+			margin:  4% 4% 2% 3%;
+			float: right;
+		} 
+
+
+
+
+        </style>
+    </head>
+    <body >
+        <div class="fixedcells header"></div>
+        <div class="fixedcells footer"></div>
+        <div class="background"></div>
+        <div class="cell d1"></div>
+        <div class="cell d2"></div>
+        <div class="d3">
+        	<div class="d3__table d31">
+        		<div class="d3__table__cell d311">
+        		</div>
+        		<div class="d3__table__cell d312">
+        		</div>
+        		<div class="d3__table__cell d313">
+        		</div>
+        		<div class="d3__table__cell--longcell d314">
+        		</div>
+        	</div>
+        	<div class="d3__table d32">
+        		<div class="d3__table__cell d321">
+        		</div>
+        		<div class="d3__table__cell d322">
+        		</div>
+        		<div class="d3__table__cell d323">
+        		</div>
+        		<div class="d3__table__cell--longcell d324">
+        		</div>
+        		<div class="d3__table__cell--fullwidth d325">
+        		</div>
+        	</div>
+        </div>
+        <div class="cell d4"></div>
+        <div id="footer"></div>	
+	</style>
+</head>
+<body>
+
+	
+</body>
+</html>
