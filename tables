@@ -1,265 +1,272 @@
 
 <!DOCTYPE html>
 <html>
-<head>
-	<meta charset="utf-8">
-	<title>Table</title>
-	<style>
-		.header {
-       		z-index: 1;
-			position: fixed;
-			right: 0%; 
-    		top: 0%;
-    		background: #ff7; 
-            border: 0px; 
-            width:60%;
-            height: 5%;
-		}
-		.bottom {
-			z-index: 1;
-			position: fixed;
-			right: 0%; 
-    		bottom: 0%;
-    		background: #f67; 
-            border-style: solid; 
-    		border-width: 1px 0px 0px 0px;  
-            width:100%;
-            height: 14%
-		}
-		.mainTable{
-			border-style: solid; 
-    		border-width: 1px 0px 1px 1px; 
-			position: absolute;
-			right: 0%;
-			width: 100%;
-			height: 160%;
-			background: #a89;
-		}
-		.mainTd{
-			position: relative;
-			height: 20%;
-			border-style: solid; 
-    		border-width: 1px 0px 1px 0px; 
-			background: #e897;
+    <head>
+        <meta charset="utf-8">
+        <title>Table</title>
+        <style>
+            .header {
+                z-index: 1;
+                position: fixed;
+                right: 0%; 
+                top: 0%;
+                background: #ff7; 
+                border: 0px; 
+                width:60%;
+                height: 5%;
+            }
+            
+            .bottom {
+                z-index: 1;
+                position: fixed;
+                right: 0%; 
+                bottom: 0%;
+                background: #f67; 
+                border-style: solid; 
+                border-width: 1px 0px 0px 0px;  
+                width:100%;
+                height: 14%
+            }
 
-		}
-		.t1{
-			z-index: 0.9;
-			position: relative;
-			height:93%;
-			width: 77%;
-			border-style: solid; 
-    		border-width: 1px 1px 1px 1px;
-			background: #d135;
-			margin:  5% 3% 7% 10%;
-		}
-		.t2{
-			position: relative;
-			height: 85%;
-			width: 93%;
-			border-style: solid; 
-    		border-width: 1px 1px 1px 1px;
-			background: #c741;
-			margin:  5% 0% 25% 7%;
-		}
-		.t21{
-			position: relative;
-			height: 100%;	
-			width: 75%;
-			border-style: solid; 
-    	border-width: 1px 1px 1px 1px;
-			background: #c741;
-			margin:  5% 10% 0% 15%
-		}
-		.t211{
-			position: relative;
-			height: 90%;	
-			width: 70%;
-			border-style: solid; 
-    		border-width: 1px 1px 1px 1px;
-			background: #c741;
-			margin:  0% 5% 0% 20%;
-		}
-		.t212{
-			position: relative;
-			height: 90%;	
-			width: 80%;
-			border-style: solid; 
-    		border-width: 1px 1px 1px 1px;
-			background: #c741;
-			margin:  0% 5% 0% 5%;
-		}
-		.t213{
-			position: relative;
-			height: 90%;	
-			width: 90%;
-			border-style: solid; 
-    		border-width: 1px 1px 1px 1px;
-			background: #c741;
-			margin:  0% 10% 0% 5%;
-		}
-		.t214{
-			position: relative;
-			height: 70%;	
-			width: 90%;
-			border-style: solid; 
-    		border-width: 1px 1px 1px 1px;
-			background: #c741;
-			margin:  0% 7% 0% 7%;
-		}
-		.t22{
-			position: relative;
-			height: 70%;	
-			width: 75%;
-			border-style: solid; 
-    		border-width: 1px 1px 1px 1px;
-			background: #c741;
-			margin:  5% 10% 7% 15%
-		}
-	
-		.t224{
-			position: relative;
-			height: 70%;	
-			width: 66%;
-			border-style: solid; 
-    		border-width: 1px 1px 1px 1px;
-			background: #c741;
-			margin:  0% 17% 0% 18%;
-		}
+            .mainTable{
+                border-style: solid; 
+                border-width: 1px 0px 1px 1px; 
+                position: absolute;
+                right: 0%;
+                width: 100%;
+                height: 160%;
+                background: #a89;
+            }
 
-		.t3{
-			position: relative;
-			height: 90%;
-			width: 75%;
-			border-style: solid; 
-    		border-width: 1px 1px 1px 1px;
-			background: #e481;
-			margin:  10% 10% 15% 10%;
-		}
-		
-		
-	</style>
-</head>
-<body>
-	<table class="header" >
-		<tr>
-			<td></td>
-		</tr>
-	</table>	
-	<table class="mainTable">
-		<tr>
-			<td  class="mainTd" colspan="3"></td>
-		</tr>
-		<tr >
-			<td width="30%">
-				<table class="t1">
-					<tr>
-						<td> </td>
-					</tr>
-				</table>
-			</td>
-			<td width="45%">
-				<table class="t2">
-					<tr>
-						<td> 
-							<table class="t21"> 
-								<tr>
-									<td>
-										<table class="t211">
-											<tr>
-												<td></td>
-											</tr>	
-										</table>
-									</td>	
-									<td>
-										<table class="t212">
-											<tr>
-												<td></td>
-											</tr>											
-										</table>										
-									</td>
-									<td>
-										<table class="t213">
-											<tr>
-												<td></td>
-											</tr>
-										</table>										
-									</td>	
-								</tr>
-								<tr>
-									<td  colspan="3">
-										<table class="t214">
-											<tr>
-												<td>											
-												</td>
-											</tr>
-										</table>
-									</td>								
-								</tr>
-							</table>
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<table class="t22">
-								<tr>
-									<td>
-										<table class="t211">
-											<tr>
-												<td></td>
-											</tr>	
-										</table>
-									</td>	
-									<td>
-										<table class="t212">
-											<tr>
-												<td></td>
-											</tr>											
-										</table>										
-									</td>
-									<td>
-										<table class="t213">
-											<tr>
-												<td></td>
-											</tr>
-										</table>										
-									</td>	
-								</tr>
-								<tr>
-									<td  colspan="3">
-										<table class="t224">
-											<tr>
-												<td>											
-												</td>
-											</tr>
-										</table>
-									</td>								
-								</tr>	
-								<tr>
-									<td height="20%"  colspan="3" class="mainTd" >
-								
-									</td>								
-								</tr>	
-							</table>
-						</td>
-					</tr>
-				</table>
-			</td>
-			<td width="25%">
-				<table class="t3">
-					<tr>
-						<td ></td>
-					</tr>
-				</table>
-			</td>
-		</tr>
-	</table>
+            .mainTd{
+                position: relative;
+                height: 20%;
+                border-style: solid; 
+                border-width: 1px 0px 1px 0px; 
+                background: #e897;
+            }
 
+            .t1{
+                z-index: 0.9;
+                position: relative;
+                height:93%;
+                width: 77%;
+                border-style: solid; 
+                border-width: 1px 1px 1px 1px;
+                background: #d135;
+                margin:  5% 3% 7% 10%;
+            }
 
-	<table class="bottom" >
-		<tr>
-			<td></td>
-		</tr>
-	</table>
+            .t2{
+                position: relative;
+                height: 85%;
+                width: 93%;
+                border-style: solid; 
+                border-width: 1px 1px 1px 1px;
+                background: #c741;
+                margin:  5% 0% 25% 7%;
+            }
 
+            .t21{
+                position: relative;
+                height: 100%;   
+                width: 75%;
+                border-style: solid; 
+                border-width: 1px 1px 1px 1px;
+                background: #c741;
+                margin:  5% 10% 0% 15%
+            }
+
+            .t211{
+                position: relative;
+                height: 90%;    
+                width: 70%;
+                border-style: solid; 
+                border-width: 1px 1px 1px 1px;
+                background: #c741;
+                margin:  0% 5% 0% 20%;
+            }
+
+            .t212{
+                position: relative;
+                height: 90%;    
+                width: 80%;
+                border-style: solid; 
+                border-width: 1px 1px 1px 1px;
+                background: #c741;
+                margin:  0% 5% 0% 5%;
+            }
+
+            .t213{
+                position: relative;
+                height: 90%;    
+                width: 90%;
+                border-style: solid; 
+                border-width: 1px 1px 1px 1px;
+                background: #c741;
+                margin:  0% 10% 0% 5%;
+            }
+
+            .t214{
+                position: relative;
+                height: 70%;    
+                width: 90%;
+                border-style: solid; 
+                border-width: 1px 1px 1px 1px;
+                background: #c741;
+                margin:  0% 7% 0% 7%;
+            }
+
+            .t22{
+                position: relative;
+                height: 70%;    
+                width: 75%;
+                border-style: solid; 
+                border-width: 1px 1px 1px 1px;
+                background: #c741;
+                margin:  5% 10% 7% 15%
+            }
+        
+            .t224{
+                position: relative;
+                height: 70%;    
+                width: 66%;
+                border-style: solid; 
+                border-width: 1px 1px 1px 1px;
+                background: #c741;
+                margin:  0% 17% 0% 18%;
+            }
+
+            .t3{
+                position: relative;
+                height: 90%;
+                width: 75%;
+                border-style: solid; 
+                border-width: 1px 1px 1px 1px;
+                background: #e481;
+                margin:  10% 10% 15% 10%;
+            }
+            
+        </style>
+    </head>
+    <body>
+        <table class="header" >
+            <tr>
+                <td></td>
+            </tr>
+        </table>    
+        <table class="mainTable">
+            <tr>
+                <td  class="mainTd" colspan="3"></td>
+            </tr>
+            <tr >
+                <td width="30%">
+                    <table class="t1">
+                        <tr>
+                            <td> </td>
+                        </tr>
+                    </table>
+                </td>
+                <td width="45%">
+                    <table class="t2">
+                        <tr>
+                            <td> 
+                                <table class="t21"> 
+                                    <tr>
+                                        <td>
+                                            <table class="t211">
+                                                <tr>
+                                                    <td></td>
+                                                </tr>   
+                                            </table>
+                                        </td>   
+                                        <td>
+                                            <table class="t212">
+                                                <tr>
+                                                    <td></td>
+                                                </tr>                                           
+                                            </table>                                        
+                                        </td>
+                                        <td>
+                                            <table class="t213">
+                                                <tr>
+                                                    <td></td>
+                                                </tr>
+                                            </table>                                        
+                                        </td>   
+                                    </tr>
+                                    <tr>
+                                        <td  colspan="3">
+                                            <table class="t214">
+                                                <tr>
+                                                    <td>                                            
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>                               
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <table class="t22">
+                                    <tr>
+                                        <td>
+                                            <table class="t211">
+                                                <tr>
+                                                    <td></td>
+                                                </tr>   
+                                            </table>
+                                        </td>   
+                                        <td>
+                                            <table class="t212">
+                                                <tr>
+                                                    <td></td>
+                                                </tr>                                           
+                                            </table>                                        
+                                        </td>
+                                        <td>
+                                            <table class="t213">
+                                                <tr>
+                                                    <td></td>
+                                                </tr>
+                                            </table>                                        
+                                        </td>   
+                                    </tr>
+                                    <tr>
+                                        <td  colspan="3">
+                                            <table class="t224">
+                                                <tr>
+                                                    <td>                                            
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>                               
+                                    </tr>   
+                                    <tr>
+                                        <td height="20%"  colspan="3" class="mainTd" >
+                                    
+                                        </td>                               
+                                    </tr>   
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                <td width="25%">
+                    <table class="t3">
+                        <tr>
+                            <td ></td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+        <table class="bottom" >
+            <tr>
+                <td></td>
+            </tr>
+        </table>
+    </body>
 </html>
