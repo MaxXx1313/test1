@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html >
+<head >
+    <meta charset="utf-8">
+    <title>media(flex)</title>
+    <style>
+        html,body{
+            height: 100%;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        .mainconteiner{
+            height: 100%;
+            display: flex;
+            justify-content: space-evenly;
+            align-content: start;
+            background: linear-gradient(#2b8b5a, black);
+        }
+
+        .maincontent__item{
+            border-radius: 15px;
+            background: #d4f014b3;
+            border-style: solid; 
+            border-width: 1px 1px 1px 1px;
+            height: 27%;
+            margin-top: 4%;
+        }
+
+        @media (max-width: 639px){
+           
+            .mainconteiner{
+            width: 100%;
+            flex-flow: column wrap;
+            align-content: space-evenly;
+            }
+            
+            .maincontent__item{
+            width: 50%;
+            height: 23%;
+            }
+        }
+
+        @media (max-width: 1024px) and (min-width: 640px){
+           
+            .mainconteiner{
+            width: 100%;
+            flex-flow: row wrap;
+            }
+            
+            .maincontent__item{
+            width: 27%;
+            }
+        }
+
+        @media (min-width: 1025px){
+           
+            .mainconteiner{
+            width: 1024px;
+            flex-flow: row wrap;
+            }
+            
+            .maincontent__item{
+            width: 256px;
+            }
+        }
+  
+        .box1{
+
+        }
+
+        .box2{
+
+        }
+
+        .box3{
+            
+        }   
+
+        </style>
+    </head>
+    <body >
+        <div class="mainconteiner">
+            <div class="maincontent__item box1"></div>
+            <div class="maincontent__item box2"></div>
+            <div class="maincontent__item box3"></div>
+        </div>
+    </body>
+</html>
