@@ -67,13 +67,19 @@
         }
 
         .but1{
-            height: 30%;
+            height: 27%;
             background:  linear-gradient(#acea45, white);
         }
 
         .but2{
-            height: 30%;
+            height: 27%;
             background:  linear-gradient(#d67affb3, white);
+        }
+
+        .but3{
+            height: 27%;
+            background: linear-gradient(#148c6ae6, #0c0c0c);
+            color: #ffb63d;
         }
 
         .maincontent_item_input_form_table td input{

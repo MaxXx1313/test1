@@ -36,8 +36,9 @@
                     </table>
                 </form>
                 <div class="maincontent_item_input_form_buttons">
-                    <button form="form" class="but1"><b>CALCULATE</b></button>
-                    <button form="form" class="but2"><b>clear</b></button>
+                    <button form="form" class="but1" ><b>CALCULATE</b></button>
+                    <button form="form" class="but2"><b>clear fields</b></button>
+                    <button form="form" class="but3"><b>delete table</b></button>
                 </div>
             </div>
             <div class="maincontent__item d1">
