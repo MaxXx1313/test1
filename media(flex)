@@ -89,6 +89,7 @@
     </head>
     <body >
         <div class="mainconteiner">
+            <script>alert("patrick")</script>
             <div class="maincontent__item box1"></div>
             <div class="maincontent__item box2"></div>
             <div class="maincontent__item box3"></div>

@@ -1,0 +1,84 @@
+        html,body{
+            height: 100%;
+            width: 100%;
+        } 
+
+        header{
+            width: 100%;
+            height: 7%;
+            font: 200% serif;
+            text-align: center;
+        }           
+         
+        .maincontent{
+            height: 100%;
+            width: 100%;
+            display: flex;
+            flex-flow: column wrap;
+            align-content: center;
+            align-items: center;
+            background: linear-gradient(#2b8b5a, white);
+            justify-content: flex-start;
+        }
+
+        .maincontent__item{
+            background: #fffbb1e6;
+            border-style: solid; 
+            border-width: 1px 1px 1px 1px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.5);
+            margin: 2% 0% 2% 0%;
+            border-radius: 10px;
+        }
+
+        .input_div{
+            min-height: 25%;
+            width: 35%;
+            display: flex;
+            flex-flow: row wrap;   
+
+        }
+
+        .output_div{
+
+        }
+
+        
+        .maincontent_item_input_form{
+            height: 100%;
+            width: 70%;
+        }
+
+        .maincontent_item_input_form_buttons{
+            display: flex;
+            flex-flow: column wrap;
+            justify-content: space-evenly;
+            width: 30%;
+        }
+
+        .maincontent_item_input_form_table{
+            width: 100%;
+            height: 100%;
+            background: #79ff4e4d;
+            border-radius: 10px;
+        }
+
+        .maincontent_item_input_form_table td{
+            text-align: center;
+        }
+
+        .but1{
+            height: 30%;
+            background:  linear-gradient(#acea45, white);
+        }
+
+        .but2{
+            height: 30%;
+            background:  linear-gradient(#d67affb3, white);
+        }
+
+        .maincontent_item_input_form_table td input{
+            min-width: 90%;
+            border-style: solid; 
+            border-width: 1px 1px 1px 1px;
+            border-color: white;
+        }

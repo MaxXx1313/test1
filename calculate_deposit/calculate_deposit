@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script src="script.js"></script>
+        <link rel="stylesheet" href="style.css">
+        <title>Deposite</title>
+    </head>
+    <body >
+        <div class="maincontent"> 
+            <header>DEPOSITE CALCULATE</header>
+            <div class="maincontent__item input_div">
+                <form name="input" method="get" autocomplete="off" id="form" class="maincontent_item_input_form">
+                    <table class="maincontent_item_input_form_table">
+                        <tr>
+                            <td><b>amount of money</b></td>
+                            <td><input type="text" name="AmountOfMoney" size="30" ></td>
+                        </tr>
+                         <tr>
+                            <td><b>number of months</b></td>
+                            <td> <input type="text" name="NumberOfMounth"  size="30"></td>
+                        </tr>
+                         <tr>
+                            <td><b>start month</b></td>
+                            <td> <input type="text" name="StartMonth"  size="30"></td>
+                        </tr>
+                         <tr>
+                            <td><b>simple percent</b></td>
+                            <td><input type="text" name="SimplePercent"  size="30"></td>
+                        </tr>
+                        <tr>
+                            <td><b>complex percent</b></td>
+                            <td><input type="text" name="ComplexPercent"  size="30"></td>
+                        </tr>
+                    </table>
+                </form>
+                <div class="maincontent_item_input_form_buttons">
+                    <button form="form" class="but1"><b>CALCULATE</b></button>
+                    <button form="form" class="but2"><b>clear</b></button>
+                </div>
+            </div>
+            <div class="maincontent__item d1">
+                <table>
+                    <tr>
+                        <td class="maincontent__item_invisiable_cell"></td>
+                        <td></td>
+                        <td></td>
+                    </tr>   
+                </table>
+            </div>
+        </div>
+    </body>
+</html>
