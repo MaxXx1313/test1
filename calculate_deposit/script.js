@@ -1,12 +1,18 @@
- function validateForm() {
-    return (isNotEmpty("name", "Please enter your name!")
-    && isNotEmpty("lname", "Please enter your last name!")
-    && isSelected("city", "Please make a selection!")
-    && isSelected("state", "Please make a selection!")
-    && isNumeric("zipcode", "Please enter a 5-digit zip code!")
-    && isLengthMinMax("zipcode", "Please enter a 5-digit zip code!", 5, 5)
-    && isNumeric("phone", "Please enter a valid phone number!")
-    && isValidEmail("email", "Enter a valid email!")
-    && isLengthMinMax("login", "Enter a valid login id!", 10, 25)
-    && isLengthMinMax("password", "Enter a valid password!", 6, 8));
+ var INPUT_DATA = new Array(document.getElementById("AmountOfMoney"), document.getElementById("NumberOfMonth"),
+                            document.getElementById("StartMonth"), document.getElementById("SimplePercent"), document.getElementById("ComplexPercent"));
+
+
+function isNumeric( n ) {
+  return !isNaN(parseFloat(n.value)) && isFinite( n.value );
 }
+
+ function valideteAll(){
+    for (var i = 0; i < INPUT_DATA.length; i++) {
+       if(isNumeric(INPUT_DATA[i])){
+        INPUT_DATA[i].classList.add("valide_input");
+       }
+       else{
+        INPUT_DATA[i].classList.add("invalid_input");
+       }
+    }
+ } 

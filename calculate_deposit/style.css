@@ -38,6 +38,15 @@
 
         }
 
+        .valide_input{
+            background: #ffb5b5;
+            color: hsla;
+        }
+
+        .invalid_input{
+            background: #ffb5b5;
+        }
+        
         .output_div{
 
         }
