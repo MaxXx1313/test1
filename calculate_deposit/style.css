@@ -61,7 +61,7 @@
         }
 
         .maincontent_item_input_form_table{
-            width: 100%;
+            width: max-content;
             height: 100%;
             background: #79ff4e4d;
             border-radius: 10px;
@@ -76,7 +76,7 @@
             background:  linear-gradient(#acea45, white);
         }
 
-        #but2{
+        #button_clear-fields{
             height: 27%;
             background:  linear-gradient(#d67affb3, white);
         }
