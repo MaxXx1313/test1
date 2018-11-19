@@ -5,7 +5,6 @@
 
         header{
             width: 100%;
-            height: 7%;
             font: 200% serif;
             text-align: center;
         }           
@@ -14,7 +13,7 @@
             height: 100%;
             width: 100%;
             display: flex;
-            flex-flow: column wrap;
+            flex-flow: column nowrap;
             align-content: center;
             align-items: center;
             background: linear-gradient(#2b8b5a, white);
@@ -31,20 +30,18 @@
         }
 
         .input_div{
-            min-height: 25%;
-            width: 35%;
             display: flex;
-            flex-flow: row wrap;   
+            flex-flow: row nowrap;   
 
+        }
+
+        .invalide_input{
+            background: #ffb5b5;
         }
 
         .valide_input{
-            background: #ffb5b5;
-            color: hsla;
-        }
-
-        .invalid_input{
-            background: #ffb5b5;
+            background: black;
+            color: white;
         }
         
         .output_div{
@@ -54,7 +51,6 @@
         
         .maincontent_item_input_form{
             height: 100%;
-            width: 70%;
         }
 
         .maincontent_item_input_form_buttons{
@@ -75,17 +71,17 @@
             text-align: center;
         }
 
-        .but1{
+        #but1{
             height: 27%;
             background:  linear-gradient(#acea45, white);
         }
 
-        .but2{
+        #but2{
             height: 27%;
             background:  linear-gradient(#d67affb3, white);
         }
 
-        .but3{
+        #but3{
             height: 27%;
             background: linear-gradient(#148c6ae6, #0c0c0c);
             color: #ffb63d;

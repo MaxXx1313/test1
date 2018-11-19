@@ -14,30 +14,30 @@
                     <table class="maincontent_item_input_form_table">
                         <tr>
                             <td><b>amount of money</b></td>
-                            <td><input type="number" id="AmountOfMoney" ></td>
+                            <td><input type="numder" id="AmountOfMoney"  size="30" min="0" required></td>
                         </tr>
                          <tr>
                             <td><b>number of months</b></td>
-                            <td> <input type="numder" id="NumberOfMonth"  size="30" required></td>
+                            <td><input type="numder" id="NumberOfMonth" min="1" step="1" size="30" required></td>
                         </tr>
                          <tr>
                             <td><b>start month</b></td>
-                            <td> <input type="text" id="StartMonth"  size="30" ></td>
+                            <td><input type="month" id="StartMonth"  size="30" ></td>
                         </tr>
                          <tr>
                             <td><b>simple percent</b></td>
-                            <td><input type="numder" id="SimplePercent"  size="30" required></td>
+                            <td><input type="numder" id="SimplePercent" min="0" size="30" required></td>
                         </tr>
                         <tr>
                             <td><b>complex percent</b></td>
-                            <td><input type="numder" id="ComplexPercent"  size="30" required></td>
+                            <td><input type="numder" id="ComplexPercent" min="0" size="30" required></td>
                         </tr>
                     </table>
                 </form>
                 <div class="maincontent_item_input_form_buttons">
-                    <button form="form" class="but1" ><b>CALCULATE</b></button>
-                    <button form="form" class="but2"><b>clear fields</b></button>
-                    <button form="form" class="but3"><b>delete table</b></button>
+                    <button form="form" id="but1"><b>CALCULATE</b></button>
+                    <button form="form" id="but2"><b>clear fields</b></button>
+                    <button form="form" id="but3"><b>delete table</b></button>
                 </div>
             </div>
             <div class="maincontent__item d1">
