@@ -39,7 +39,84 @@ function isNumeric(n) {
  }
 
 
-//----------------------------------------clearing form fields ---------------------------------------------------------------
+
+
+//---------------------------------------calculation percents functions----------------------------------------------------------------
+
+
+// data map [month:[Simple Procent Money,Complex Procent Money]]
+
+var dateMoneyMap = new Map();
+dateMoneyMap.set(INPUT_DATA[2].value, [INPUT_DATA[0].value, INPUT_DATA[0].value]);
+
+
+// var dateMoneyMap = {};
+// dateMoneyMap[INPUT_DATA[2].value] = [INPUT_DATA[0].value, INPUT_DATA[0].value];
+
+ 
+//calculation of simple percent 
+function calcSimplePercent(percent,startSum){
+    var previouseMonth=INPUT_DATA[2].value;
+     var temp=parseFloat(dateMoneyMap.get(previouseMonth)[0])+startSum*percent/1200;
+   return(temp.toFixed(2));
+};
+
+//calculation of complex percent
+function calcComplexPercent(month,percent,compoundingPeriod){
+    var previouseMonth = INPUT_DATA[2].value;
+    var moneyInPrevMonth = dateMoneyMap.get(previouseMonth)[1];
+    if(month%compoundingPeriod!=0){
+        return(moneyInPrevMonth);
+    }
+    else{
+        var temp=moneyInPrevMonth*(1+percent*compoundingPeriod/1200);
+        return(temp.toFixed(2));
+    }
+};
+
+//calculation of all percents
+
+function calculateAll([amountOfMoney,numderOfMonth,startMonth,simplePercent,complexPercent,compoundingPeriod]){ 
+    var tempSimplePercMoney;
+    var tempComplexPercMoney;
+    for (var i = 1; i < numderOfMonth; i++) {
+        tempSimplePercMoney=calcSimplePercent(simplePercent,amountOfMoney);
+        tempComplexPercMoney=calcComplexPercent(i,complexPercent,compoundingPeriod);
+        INPUT_DATA[2].stepUp();
+        dateMoneyMap.set(INPUT_DATA[2].value,[tempSimplePercMoney, tempComplexPercMoney]);
+    };
+    INPUT_DATA[2].stepDown(numderOfMonth-1);
+};
+
+
+
+
+//---------------------------------------drawing table functions-----------------------------------------------
+
+function createTable(array){
+     var table = document.getElementById("output_table");
+     var iterator=array.entries();
+      array.forEach(function(elem){
+        var row = table.insertRow();
+        temp=iterator.next().value;
+        row.insertCell(0).innerHTML=temp[0];
+      });
+};
+
+
+
+//=================================================================================================================================
+//=========================================     BUTTONS  EVENTS   =================================================================
+//=================================================================================================================================
+
+//-----------------------------------------CALCULATE----------------------------------------------------------------
+
+document.getElementById("button_calculate").addEventListener("click", function(){
+    calculateAll(INPUT_DATA.map(v=>v.value));
+
+});
+
+//----------------------------------------clear fields ---------------------------------------------------------------
 
 
 document.getElementById("button_clear-fields").addEventListener("click", function(){
@@ -49,38 +126,4 @@ document.getElementById("button_clear-fields").addEventListener("click", functio
     });
 });
 
-
-
-//---------------------------------------calculation percents functions----------------------------------------------------------------
-
-
-// associative massive [[Simple Procent Money,Complex Procent Money] : month]
-
-
-
-//calculation of simple percent 
-function simplePercent(month,percent,startSum){
-    var previouseMonth=moneySimpleComplex[Object.keys(moneySimpleComplex)[startMonth.stepUp(month-1)],0];
-   Return(previouseMonth+startSum*percent/1200);
-}
-
-//calculation of complex percent
-function complexPercent(month,percent,compoundingPeriod){
-    var previouseMonth=moneySimpleComplex[Object.keys(moneySimpleComplex)[startMonth.stepUp(month-1)],1];
-    if(month%numOfCompoundPeriods!=0){
-        Return(previouseMonth);
-    };
-    else{
-        Return(previouseMonth(1+percent*compoundingPeriod/1200));
-    };
-}
-
-//calculation of all percents
-
-function calculateAll(numderOfMonth,AmountOfMoney,StartMonth,SimplePercent,ComplexPercent,CompoundingPeriod){
-    var moneySimpleComplex = Array();
-    moneySimpleComplex[startMonth] = [startSum,startSum];
-    
-
-
-}
+//---------------------------------------- delete table ---------------------------------------------------------------
