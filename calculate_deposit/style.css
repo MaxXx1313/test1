@@ -10,7 +10,6 @@
         }           
          
         .maincontent{
-            height: 100%;
             width: 100%;
             display: flex;
             flex-flow: column nowrap;
@@ -71,7 +70,7 @@
             text-align: center;
         }
 
-        #but1{
+        #button_calculate{
             height: 27%;
             background:  linear-gradient(#acea45, white);
         }
@@ -81,7 +80,7 @@
             background:  linear-gradient(#d67affb3, white);
         }
 
-        #but3{
+        #button_delete-table{
             height: 27%;
             background: linear-gradient(#148c6ae6, #0c0c0c);
             color: #ffb63d;
@@ -93,3 +92,19 @@
             border-width: 1px 1px 1px 1px;
             border-color: white;
         }
+
+        .bigger_inner{
+            text-align:center;
+            background: #dff7df;
+        }
+
+        .smaller_inner{
+            text-align: center;
+            background: #ffb5b5;
+        }
+
+        .d1{
+            overflow-y: scroll;
+            max-height: 430px;
+        }
+

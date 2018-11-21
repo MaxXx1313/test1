@@ -1,5 +1,4 @@
- var INPUT_DATA = new Array(document.getElementById("AmountOfMoney"), document.getElementById("NumberOfMonth"),document.getElementById("StartMonth"),
-                            document.getElementById("SimplePercent"), document.getElementById("ComplexPercent"), document.getElementById("CompoundingPeriod"));
+ 
 
 //---------------------------------------validation of input data---------------------------------------------------------------
 
@@ -9,7 +8,11 @@ function isNumeric(n) {
 }
 
  //check all data on positive float numders 
- function valideteAll(){
+ function valideteAll(INPUT_DATA){
+    INPUT_DATA.forEach(function(elem){
+        elem.classList.remove("valide_input");
+        elem.classList.remove("invalide_input");
+    })
     for (var i = 0; i < INPUT_DATA.length; i++) {
        if(isNumeric(INPUT_DATA[i])){
         INPUT_DATA[i].classList.add("valide_input");
@@ -36,6 +39,18 @@ function isNumeric(n) {
             INPUT_DATA[int].classList.add("invalide_input");
         }
     });
+    var tr=0;
+    INPUT_DATA.forEach(function(elem){
+        if(elem.className=="valide_input"){
+            ++tr;
+        }
+    })
+    if(tr==INPUT_DATA.length){
+        return(true);
+    }
+    else{
+        return(false);
+    }
  }
 
 
@@ -46,8 +61,6 @@ function isNumeric(n) {
 
 // data map [month:[Simple Procent Money,Complex Procent Money]]
 
-var dateMoneyMap = new Map();
-dateMoneyMap.set(INPUT_DATA[2].value, [INPUT_DATA[0].value, INPUT_DATA[0].value]);
 
 
 // var dateMoneyMap = {};
@@ -55,14 +68,14 @@ dateMoneyMap.set(INPUT_DATA[2].value, [INPUT_DATA[0].value, INPUT_DATA[0].value]
 
  
 //calculation of simple percent 
-function calcSimplePercent(percent,startSum){
+function calcSimplePercent(INPUT_DATA,dateMoneyMap,percent,startSum){
     var previouseMonth=INPUT_DATA[2].value;
-     var temp=parseFloat(dateMoneyMap.get(previouseMonth)[0])+startSum*percent/1200;
+    var temp=parseFloat(dateMoneyMap.get(previouseMonth)[0])+startSum*percent/1200;
    return(temp.toFixed(2));
 };
 
 //calculation of complex percent
-function calcComplexPercent(month,percent,compoundingPeriod){
+function calcComplexPercent(INPUT_DATA,dateMoneyMap,month,percent,compoundingPeriod){
     var previouseMonth = INPUT_DATA[2].value;
     var moneyInPrevMonth = dateMoneyMap.get(previouseMonth)[1];
     if(month%compoundingPeriod!=0){
@@ -74,14 +87,15 @@ function calcComplexPercent(month,percent,compoundingPeriod){
     }
 };
 
+
 //calculation of all percents
 
-function calculateAll([amountOfMoney,numderOfMonth,startMonth,simplePercent,complexPercent,compoundingPeriod]){ 
+function calculateAll(INPUT_DATA,dateMoneyMap,[amountOfMoney,numderOfMonth,startMonth,simplePercent,complexPercent,compoundingPeriod]){ 
     var tempSimplePercMoney;
     var tempComplexPercMoney;
     for (var i = 1; i < numderOfMonth; i++) {
-        tempSimplePercMoney=calcSimplePercent(simplePercent,amountOfMoney);
-        tempComplexPercMoney=calcComplexPercent(i,complexPercent,compoundingPeriod);
+        tempSimplePercMoney=calcSimplePercent(INPUT_DATA,dateMoneyMap,simplePercent,amountOfMoney);
+        tempComplexPercMoney=calcComplexPercent(INPUT_DATA,dateMoneyMap, i,complexPercent,compoundingPeriod);
         INPUT_DATA[2].stepUp();
         dateMoneyMap.set(INPUT_DATA[2].value,[tempSimplePercMoney, tempComplexPercMoney]);
     };
@@ -94,14 +108,57 @@ function calculateAll([amountOfMoney,numderOfMonth,startMonth,simplePercent,comp
 //---------------------------------------drawing table functions-----------------------------------------------
 
 function createTable(array){
-     var table = document.getElementById("output_table");
-     var iterator=array.entries();
+    var table = document.getElementById("output_table");
+    var iterator=array.entries();
+    var row = table.insertRow();
+    row.insertCell(0).innerHTML="Date";
+    row.insertCell(1).innerHTML="Simple percent deposite";
+    row.insertCell(1).innerHTML="Complex percent deposite";
       array.forEach(function(elem){
         var row = table.insertRow();
         temp=iterator.next().value;
-        row.insertCell(0).innerHTML=temp[0];
+        var cell0=row.insertCell(0);
+        var cell1=row.insertCell(1);
+        var cell2=row.insertCell(2);
+        cell0.innerHTML=temp[0];
+        cell1.innerHTML=array.get(temp[0])[0];
+        cell2.innerHTML=array.get(temp[0])[1];
+        if(parseFloat(array.get(temp[0])[0])>parseFloat(array.get(temp[0])[1])){
+            cell1.className="bigger_inner";
+            cell2.className="smaller_inner";
+        }
+        else if(parseFloat(array.get(temp[0])[0])<parseFloat(array.get(temp[0])[1])){
+            cell2.className="bigger_inner";
+            cell1.className="smaller_inner";
+        }
+        else{
+            cell1.className="bigger_inner";
+            cell2.className="bigger_inner";
+        }
       });
 };
+
+
+function deleteTable() {
+    var table = document.getElementById("output_table");
+    while(table.lastChild) {
+        table.removeChild(table.lastChild)
+    } 
+}
+
+function calc(){
+    var INPUT_DATA = new Array(document.getElementById("AmountOfMoney"), document.getElementById("NumberOfMonth"),document.getElementById("StartMonth"),
+        document.getElementById("SimplePercent"), document.getElementById("ComplexPercent"), document.getElementById("CompoundingPeriod"));
+    deleteTable();
+    valideteAll(INPUT_DATA);
+    if(valideteAll(INPUT_DATA)){
+        var dateMoneyMap = new Map();
+        dateMoneyMap.set(INPUT_DATA[2].value, [INPUT_DATA[0].value, INPUT_DATA[0].value]);
+        calculateAll(INPUT_DATA ,dateMoneyMap,INPUT_DATA.map(v=>v.value));
+        createTable(dateMoneyMap);
+    }
+}
+
 
 
 
@@ -109,21 +166,33 @@ function createTable(array){
 //=========================================     BUTTONS  EVENTS   =================================================================
 //=================================================================================================================================
 
+
 //-----------------------------------------CALCULATE----------------------------------------------------------------
+/*
+document.getElementById("button_calculate").addEventListener("click", );
 
-document.getElementById("button_calculate").addEventListener("click", function(){
-    calculateAll(INPUT_DATA.map(v=>v.value));
+*/
 
-});
+document.getElementById("button_calculate").addEventListener('click', calc);
+
+   
+
 
 //----------------------------------------clear fields ---------------------------------------------------------------
 
-
-document.getElementById("button_clear-fields").addEventListener("click", function(){
-    INPUT_DATA.forEach(function(input){
+document.getElementById("button_clear-fields").addEventListener('click', function(){
+    var INPUT_DATA = new Array(document.getElementById("AmountOfMoney"), document.getElementById("NumberOfMonth"),document.getElementById("StartMonth"),
+        document.getElementById("SimplePercent"), document.getElementById("ComplexPercent"), document.getElementById("CompoundingPeriod"));
+        INPUT_DATA.forEach(function(input){
         input.value = "";
         input.className = "";
     });
 });
 
+
+
 //---------------------------------------- delete table ---------------------------------------------------------------
+
+document.getElementById("button_delete-table").addEventListener("click", deleteTable)
+
+
