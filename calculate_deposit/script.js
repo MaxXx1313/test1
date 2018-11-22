@@ -14,12 +14,9 @@ function isNumeric(n) {
         elem.classList.remove("invalide_input");
     })
     for (var i = 0; i < INPUT_DATA.length; i++) {
-       if(isNumeric(INPUT_DATA[i])){
-        INPUT_DATA[i].classList.add("valide_input");
-       }
-       else{
-        INPUT_DATA[i].classList.add("invalide_input");
-       }
+       if(isNumeric(INPUT_DATA[i]))  INPUT_DATA[i].classList.add("valide_input");       
+       else  INPUT_DATA[i].classList.add("invalide_input");
+       
     }
 
 //check StartMounth data for not empty field
@@ -67,14 +64,14 @@ function isNumeric(n) {
 // dateMoneyMap[INPUT_DATA[2].value] = [INPUT_DATA[0].value, INPUT_DATA[0].value];
 
  
-//calculation of simple percent 
+//calculate of simple percent 
 function calcSimplePercent(INPUT_DATA,dateMoneyMap,percent,startSum){
     var previouseMonth=INPUT_DATA[2].value;
     var temp=parseFloat(dateMoneyMap.get(previouseMonth)[0])+startSum*percent/1200;
    return(temp.toFixed(2));
 };
 
-//calculation of complex percent
+//calculate of complex percent
 function calcComplexPercent(INPUT_DATA,dateMoneyMap,month,percent,compoundingPeriod){
     var previouseMonth = INPUT_DATA[2].value;
     var moneyInPrevMonth = dateMoneyMap.get(previouseMonth)[1];
@@ -88,8 +85,7 @@ function calcComplexPercent(INPUT_DATA,dateMoneyMap,month,percent,compoundingPer
 };
 
 
-//calculation of all percents
-
+//calculate all percents and push received data in Map
 function calculateAll(INPUT_DATA,dateMoneyMap,[amountOfMoney,numderOfMonth,startMonth,simplePercent,complexPercent,compoundingPeriod]){ 
     var tempSimplePercMoney;
     var tempComplexPercMoney;
@@ -107,6 +103,7 @@ function calculateAll(INPUT_DATA,dateMoneyMap,[amountOfMoney,numderOfMonth,start
 
 //---------------------------------------drawing table functions-----------------------------------------------
 
+//display table
 function createTable(array){
     var table = document.getElementById("output_table");
     var iterator=array.entries();
@@ -137,7 +134,8 @@ function createTable(array){
         }
       });
 };
-
+ 
+//delete table 
 
 function deleteTable() {
     var table = document.getElementById("output_table");
@@ -146,6 +144,9 @@ function deleteTable() {
     } 
 }
 
+//---------------------------------------main calculation function-----------------------------------------------
+
+//validate input data, calculate recieved values, display table
 function calc(){
     var INPUT_DATA = new Array(document.getElementById("AmountOfMoney"), document.getElementById("NumberOfMonth"),document.getElementById("StartMonth"),
         document.getElementById("SimplePercent"), document.getElementById("ComplexPercent"), document.getElementById("CompoundingPeriod"));
@@ -159,8 +160,16 @@ function calc(){
     }
 }
 
+//---------------------------------------clearing input fields function-----------------------------------------------
 
-
+function clearFields(){
+    var INPUT_DATA = new Array(document.getElementById("AmountOfMoney"), document.getElementById("NumberOfMonth"),document.getElementById("StartMonth"),
+        document.getElementById("SimplePercent"), document.getElementById("ComplexPercent"), document.getElementById("CompoundingPeriod"));
+        INPUT_DATA.forEach(function(input){
+        input.value = "";
+        input.className = "";
+        });
+    }
 
 //=================================================================================================================================
 //=========================================     BUTTONS  EVENTS   =================================================================
@@ -168,10 +177,7 @@ function calc(){
 
 
 //-----------------------------------------CALCULATE----------------------------------------------------------------
-/*
-document.getElementById("button_calculate").addEventListener("click", );
 
-*/
 
 document.getElementById("button_calculate").addEventListener('click', calc);
 
@@ -180,19 +186,12 @@ document.getElementById("button_calculate").addEventListener('click', calc);
 
 //----------------------------------------clear fields ---------------------------------------------------------------
 
-document.getElementById("button_clear-fields").addEventListener('click', function(){
-    var INPUT_DATA = new Array(document.getElementById("AmountOfMoney"), document.getElementById("NumberOfMonth"),document.getElementById("StartMonth"),
-        document.getElementById("SimplePercent"), document.getElementById("ComplexPercent"), document.getElementById("CompoundingPeriod"));
-        INPUT_DATA.forEach(function(input){
-        input.value = "";
-        input.className = "";
-    });
-});
+document.getElementById("button_clear-fields").addEventListener('click', clearFields);
 
 
 
 //---------------------------------------- delete table ---------------------------------------------------------------
 
-document.getElementById("button_delete-table").addEventListener("click", deleteTable)
+document.getElementById("button_delete-table").addEventListener("click", deleteTable);
 
 
